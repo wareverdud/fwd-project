@@ -22,7 +22,7 @@ export default function Authorization() {
       // console.log(user)
       console.log(user.uid)
       setUid(user.uid)
-    } catch (e) {
+    } catch (e: any) {
       console.log(e.message, e.code)
     }
   }
