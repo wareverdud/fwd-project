@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Eslint test
+        run: npm run lint
