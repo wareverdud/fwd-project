@@ -8,7 +8,7 @@ export default function Note() {
       <Head>
         <title>Notes</title>
       </Head>
-      <h1 className="p-2">Notes {router.query.id}</h1>
+      <h1>Notes {router.query.id}</h1>
     </>
   )
 }

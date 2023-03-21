@@ -26,8 +26,13 @@ export default function Notes() {
         <title>Notes</title>
       </Head>
       <div className="text-center">
-        <h1 className="p-2">Notes</h1>
-        <button onClick={postNotes}>Get Notes</button>
+        <h1>Notes</h1>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3"
+          onClick={postNotes}
+        >
+          Get Notes
+        </button>
         {Object.keys(lessons).length > 0 && <p>{JSON.stringify(lessons)}</p>}
       </div>
     </>

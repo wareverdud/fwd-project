@@ -10,22 +10,18 @@ export default function Home() {
         <title>Welcome Dualingo</title>
       </Head>
       {/* <div className="d-flex justify-content-center"> */}
-      <span className="text-center">
-        <h1 className="p-2">Home</h1>
-        <div className="p-2 align-items-center">
+      <div className="text-center">
+        <h1>Home</h1>
+        <div>
           <Link href={'/about'}>About page</Link>
         </div>
-        <div className="p-2">
+        <div>
           <Link href={'/notes'}>Notes</Link>
         </div>
-        <div className="p-2">
+        <div>
           <Link href={'/note/465768'}>Specific Note</Link>
         </div>
-
-        <button type="button" className="text-center btn btn-dark m-2">
-          Press me
-        </button>
-      </span>
+      </div>
       {/* </div> */}
 
       <Authorization />
