@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import Authorization from '@/authorization'
+import Authorization from '@/components/authorization'
 
 export default function Home() {
   return (
@@ -9,22 +9,11 @@ export default function Home() {
         {/* Opengraph for telegram preview picture... */}
         <title>Welcome Dualingo</title>
       </Head>
-      {/* <div className="d-flex justify-content-center"> */}
-      <div className="text-center">
-        <h1>Home</h1>
-        <div>
-          <Link href={'/about'}>About page</Link>
-        </div>
-        <div>
-          <Link href={'/notes'}>Notes</Link>
-        </div>
-        <div>
-          <Link href={'/note/465768'}>Specific Note</Link>
-        </div>
-      </div>
-      {/* </div> */}
+      <h1 className="text-3xl font-bold">Home page</h1>
 
-      <Authorization />
+      <div className="my-5">
+        <Authorization />
+      </div>
     </>
   )
 }
