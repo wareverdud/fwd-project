@@ -7,10 +7,13 @@ import {
 import { app } from '../firebase-setup'
 import router from 'next/router'
 
-export default function Authorization() {
+interface Props {
+  signIn: boolean
+}
+
+export default function Authorization({ signIn }: Props) {
   const [email, setEmail] = useState('ru.khakimov@innopolis.university')
   const [password, setPassword] = useState('qwerty')
-  const [uid, setUid] = useState('')
 
   async function handleChangeEmail(event: React.ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value)
@@ -22,22 +25,37 @@ export default function Authorization() {
     setPassword(event.target.value)
   }
 
-  async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
+  async function handleSignIn(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault()
     const auth = getAuth(app)
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password)
-      console.log(user.uid)
-      setUid(user.uid)
       router.push('/notes')
     } catch (e: any) {
-      console.log(e.message, e.code)
+      alert('No such user')
+      // console.log(e.message, e.code)
+    }
+  }
+
+  async function handleSignUp(event: React.SyntheticEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const auth = getAuth(app)
+    try {
+      const { user } = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      )
+      router.push('/notes')
+    } catch (e: any) {
+      alert('Such user exists')
+      // console.log(e.message, e.code)
     }
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={signIn ? handleSignIn : handleSignUp}>
         <div className="m-3">
           <input
             type="text"
@@ -58,7 +76,7 @@ export default function Authorization() {
         </div>
         <input
           type="submit"
-          value="Отправить"
+          value={signIn ? 'Sign in' : 'Sign up'}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3"
         />
       </form>

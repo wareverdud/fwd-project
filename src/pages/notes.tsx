@@ -28,6 +28,12 @@ export default function Notes() {
         console.log(user)
         router.push('/')
       }
+
+      // if (false) {
+      //   console.log('non authorized')
+      // } else {
+      //   router.push('/')
+      // }
     }
   }, [])
 
