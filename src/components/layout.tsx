@@ -1,6 +1,10 @@
 import Link from 'next/link'
 
-export default function Layout({ children }) {
+interface DashboardLayoutProps {
+  children: React.ReactNode
+}
+
+export default function Layout(props: DashboardLayoutProps) {
   return (
     <>
       <nav>
@@ -27,7 +31,7 @@ export default function Layout({ children }) {
           </li>
         </ul>
       </nav>
-      <main>{children}</main>
+      <main>{props.children}</main>
     </>
   )
 }

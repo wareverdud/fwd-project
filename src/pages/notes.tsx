@@ -1,22 +1,47 @@
 import Head from 'next/head'
 import { db } from '../firebase-setup'
 import { doc, getDoc } from 'firebase/firestore'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { app } from '../firebase-setup'
+import { useRouter } from 'next/router'
+import { getAuth } from 'firebase/auth'
+
+interface LessonsState {
+  lessonNumber: string
+  lessonContent: string
+}
 
 export default function Notes() {
-  const [lessons, setLessons] = useState({})
+  const router = useRouter()
+  const ref = useRef(true)
 
-  async function postNotes() {
+  useEffect(() => {
+    if (ref.current) {
+      ref.current = false
+
+      const auth = getAuth(app)
+      const user = auth.currentUser
+
+      if (user) {
+        console.log('not authorized')
+      } else {
+        console.log(user)
+        router.push('/')
+      }
+    }
+  }, [])
+
+  const [lessons, setLessons] = useState<LessonsState | string>('')
+
+  async function getNotes() {
     const uid = '2thVPqSvYDgfgvF6oQbAlijjA8X2'
     const docRef = doc(db, 'lessons', uid)
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists()) {
-      setLessons(docSnap.data())
-      console.log('Document data:', docSnap.data())
+      setLessons(docSnap.data() as LessonsState)
     } else {
-      setLessons({ 'Lesson-1': 'Empty' })
-      console.log('No such document!')
+      setLessons('No lessons')
     }
   }
 
@@ -26,10 +51,10 @@ export default function Notes() {
         <title>Notes</title>
       </Head>
       <div>
-        <h1>Notes</h1>
+        <h1 className="text-3xl font-bold">Notes</h1>
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3"
-          onClick={postNotes}
+          onClick={getNotes}
         >
           Get Notes
         </button>

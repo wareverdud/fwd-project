@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Head from 'next/head'
 import Authorization from '@/components/authorization'
 
@@ -11,7 +10,7 @@ export default function Home() {
       </Head>
       <h1 className="text-3xl font-bold">Home page</h1>
 
-      <div className="my-5">
+      <div>
         <Authorization />
       </div>
     </>
