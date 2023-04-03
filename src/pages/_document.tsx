@@ -4,10 +4,12 @@ export default function Document() {
   return (
     <Html>
       <Head></Head>
-      <body className="font-medium text-left dark:bg-gray-800 dark:text-white">
+      <body className='app bg-gray-20'>
         <Main />
         <NextScript />
       </body>
     </Html>
   )
 }
+
+{/* <body className='flex font-medium text-center dark:bg-gray-800 dark:text-white mx-auto '></body> */}
