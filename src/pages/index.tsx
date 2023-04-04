@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Authorization from '@/components/authorization/authorization'
-import { useState } from 'react'
 
 export default function Home() {
   return (

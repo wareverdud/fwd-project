@@ -30,8 +30,6 @@ export default function App({ Component, pageProps }: AppProps) {
       }else  {setIsTopOfPage(false)}
     }
 
-    
-
     window.addEventListener("scroll",handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
     
