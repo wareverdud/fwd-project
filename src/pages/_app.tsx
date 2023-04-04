@@ -16,10 +16,7 @@ import Footer from "@/components/footer"
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
-  if (router.basePath === '/') {
-    return <Component {...pageProps} />
-  }
+  const router = useRouter();
 
   const [selectedPage,setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
 
@@ -32,9 +29,18 @@ export default function App({ Component, pageProps }: AppProps) {
         setSelectedPage(SelectedPage.Home);
       }else  {setIsTopOfPage(false)}
     }
+
+    
+
     window.addEventListener("scroll",handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+    
   }, []);
+
+  // all conditions must be placed after useState and useEffect!
+  if (router.basePath === '/') {
+    return <Component {...pageProps} />
+  }
 
   return (
     
