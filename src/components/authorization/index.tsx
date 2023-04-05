@@ -41,10 +41,7 @@ const SignIn = ({setSelectedPage}: Props) => {
                     <span className='text-primary-500'>JOIN IN</span>
                 </HText>
                 <p className='my-5'>
-                    Hello sign in we will kill you
-                    awrgegraeraergnejlakbaegrneklrgnaerg
-                    ae;rignlaejrgnaegnaelrgjn21412413251351 32rfefg wearing12345  gallery
-                    234qf wgrsdg w534g45gw
+                    Join us today and embark on a rewarding linguistic journey!
                 </p>
             </motion.div>
 

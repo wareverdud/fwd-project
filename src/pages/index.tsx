@@ -5,9 +5,8 @@ export default function Home() {
     <>
       <Head>
         {/* Opengraph for telegram preview picture... */}
-        <title>Welcome Dualingo</title>
+        <title>Welcome HummiLang</title>
       </Head>
-      <h1 className="text-3xl font-bold">Home page</h1>
 
     </>
   )

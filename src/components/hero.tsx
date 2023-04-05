@@ -44,10 +44,8 @@ const Hero = ({setSelectedPage}: Props) => {
             </div>
           </div>
 
-          <p className='mt-8 text-sm md:text-start'>
-            24uongp2u945hg549p02ghuwt4pnv249gn452gn
-            q3o4iufbqp3ufbpuq34fbq34pfbq34fq34fbq34f
-            q3pu4fbq394pfb3q498fhqp3f4hqp3948fhq39
+          <p className='mt-5 text-xl md:text-start'>
+            Because ordering pizza in Italian is a life skill too.
           </p>
         </motion.div>
 
@@ -66,13 +64,6 @@ const Hero = ({setSelectedPage}: Props) => {
           <ActionButton setSelectedPage={setSelectedPage}>
             Sign In
           </ActionButton>
-          <AnchorLink
-            className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-            onClick={() => setSelectedPage(SelectedPage.Contact)}
-            href={`#${SelectedPage.Contact}`}
-          >
-            <p>Read more</p>
-          </AnchorLink>
         </motion.div>
       </div>
 
@@ -83,15 +74,8 @@ const Hero = ({setSelectedPage}: Props) => {
       </div>
     </motion.div>
 
-    {/*Sponsors*/}
+    {/*Separation*/}
     <div className='h-[150px] w-full bg-primary-100 py-10'>
-      <div className='mx-auto w-5/6'>
-        <div className='flex w-3/5 items-center justify-between gap-8'>
-          <img src={SponsorRedBull.src} alt="redbull-sponsor" />
-          <img src={SponsorForbes.src} alt="forbes-sponsor" />
-          <img src={SponsorFortune.src} alt="fortune-sponsor" />
-        </div>
-      </div>
     </div>
     </section>
   )
