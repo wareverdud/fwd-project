@@ -4,7 +4,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
 } from 'firebase/auth'
-import { app } from '../../firebase-setup'
+import { app } from '@/firebase/firebase-setup'
 import router from 'next/router'
 
 interface Props {
@@ -38,8 +38,6 @@ export default function Authorization({ signIn }: Props) {
   }
 
   async function handleSignUp(event: React.SyntheticEvent<HTMLFormElement>) {
-    
-
     event.preventDefault()
     const auth = getAuth(app)
     try {
@@ -55,33 +53,33 @@ export default function Authorization({ signIn }: Props) {
     }
   }
 
-  const inputStyles = `w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white text-white`;
+  const inputStyles = `w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white text-white`
 
   return (
-      <form onSubmit={signIn ? handleSignIn : handleSignUp}>
-        <div className="m-3">
-          <input 
-            type="text"
-            value={email}
-            onChange={handleChangeEmail}
-            className={inputStyles}
-            placeholder="Email"
-          />
-        </div>
-        <div className="m-3">
-          <input
-            type="password"
-            value={password}
-            onChange={handleChangePassword}
-            className={inputStyles}
-            placeholder="Password"
-          />
-        </div>
+    <form onSubmit={signIn ? handleSignIn : handleSignUp}>
+      <div className="m-3">
         <input
-          type="submit"
-          value={signIn ? 'Sign in' : 'Sign up'}
-          className="bg-secondary-500 hover:bg-primary-500 text-white font-bold py-2 px-4 rounded m-3"
+          type="text"
+          value={email}
+          onChange={handleChangeEmail}
+          className={inputStyles}
+          placeholder="Email"
         />
-      </form>
+      </div>
+      <div className="m-3">
+        <input
+          type="password"
+          value={password}
+          onChange={handleChangePassword}
+          className={inputStyles}
+          placeholder="Password"
+        />
+      </div>
+      <input
+        type="submit"
+        value={signIn ? 'Sign in' : 'Sign up'}
+        className="m-3 rounded bg-secondary-500 px-4 py-2 font-bold text-white hover:bg-primary-500"
+      />
+    </form>
   )
 }

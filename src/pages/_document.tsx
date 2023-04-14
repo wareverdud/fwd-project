@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head></Head>
-      <body className='app bg-gray-20'>
+      <body className="app bg-gray-20">
         <Main />
         <NextScript />
       </body>
@@ -12,4 +12,6 @@ export default function Document() {
   )
 }
 
-{/* <body className='flex font-medium text-center dark:bg-gray-800 dark:text-white mx-auto '></body> */}
+{
+  /* <body className='flex font-medium text-center dark:bg-gray-800 dark:text-white mx-auto '></body> */
+}
