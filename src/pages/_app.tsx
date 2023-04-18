@@ -17,25 +17,25 @@ import Footer from '@/components/footer'
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home
-  )
+  // const [selectedPage, setSelectedPage] = useState<SelectedPage>(
+  //   SelectedPage.Home
+  // )
 
-  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
+  // const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsTopOfPage(true)
-        setSelectedPage(SelectedPage.Home)
-      } else {
-        setIsTopOfPage(false)
-      }
-    }
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY === 0) {
+  //       setIsTopOfPage(true)
+  //       setSelectedPage(SelectedPage.Home)
+  //     } else {
+  //       setIsTopOfPage(false)
+  //     }
+  //   }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
 
   // all conditions must be placed after useState and useEffect!
   if (router.basePath === '/') {
@@ -44,19 +44,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <Layout>
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-      {/* Home page*/}
-      <Hero setSelectedPage={setSelectedPage} />
-      <Benefits setSelectedPage={setSelectedPage} />
-      <Gallery setSelectedPage={setSelectedPage} />
-      <SignIn setSelectedPage={setSelectedPage} />
-
+    
       <Component {...pageProps} />
-      <Footer setSelectedPage={setSelectedPage} />
+    
     </Layout>
   )
 }

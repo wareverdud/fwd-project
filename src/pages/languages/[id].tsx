@@ -53,27 +53,32 @@ export default function Cards() {
       <Head>
         <title>{router.query.id}</title>
       </Head>
-      <div>
-        <h1 className="text-3xl font-bold">Cards</h1>
-        <button
-          // className="m-3 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-          className="rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
-          onClick={getCards}
-        >
-          Get Cards
-        </button>
-        {Object.keys(flashcards).length > 0 &&
-          Object.entries(flashcards).map(([key, value]) => (
-            //TODO
-            // Just to build, fix later
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            <p key={key.charCodeAt(0) + key.charCodeAt(key.length - 1)}>
-              {key} - {value}
-            </p>
-          ))}
-        {Object.keys(flashcards).length == 0 && <p>No cards</p>}
-      </div>
+      <section
+        id="slanguages"
+        className="mx-auto min-h-full w-5/6 py-20" // min-h-full it can expend and fit the content
+      >
+        <div>
+          <h1 className="text-3xl font-bold">Cards</h1>
+          <button
+            // className="m-3 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            className="rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+            onClick={getCards}
+          >
+            Get Cards
+          </button>
+          {Object.keys(flashcards).length > 0 &&
+            Object.entries(flashcards).map(([key, value]) => (
+              //TODO
+              // Just to build, fix later
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              <p key={key.charCodeAt(0) + key.charCodeAt(key.length - 1)}>
+                {key} - {value}
+              </p>
+            ))}
+          {Object.keys(flashcards).length == 0 && <p>No cards</p>}
+        </div>
+      </section>        
     </>
   )
 }

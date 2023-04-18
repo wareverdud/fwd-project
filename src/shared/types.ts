@@ -1,8 +1,8 @@
 export enum SelectedPage {
   Home = 'home',
   About = 'about',
-  Notes = 'notes',
-  SpecificNote = 'snotes',
+  Languages = 'languages',
+  SpecificLanguages = 'slanguages',
   Contact = 'contact',
   Gallery = 'gallery',
   SignIn = 'sign',
