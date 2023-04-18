@@ -3,8 +3,17 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { doc, getDoc } from 'firebase/firestore'
 import { auth, db } from '@/firebase/firebase-setup'
+import { motion } from 'framer-motion'
+import { SelectedPage } from '@/shared/types'
+
 
 export default function Cards() {
+
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
+    SelectedPage.SpecificLanguages
+  )
+
+
   const router = useRouter()
   // const ref = useRef(true)
   // const [user, loading, error] = useAuthState(auth)
@@ -57,7 +66,7 @@ export default function Cards() {
         id="slanguages"
         className="mx-auto min-h-full w-5/6 py-20" // min-h-full it can expend and fit the content
       >
-        <div>
+        <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.SpecificLanguages)}>
           <h1 className="text-3xl font-bold">Cards</h1>
           <button
             // className="m-3 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
@@ -77,7 +86,7 @@ export default function Cards() {
               </p>
             ))}
           {Object.keys(flashcards).length == 0 && <p>No cards</p>}
-        </div>
+        </motion.div>
       </section>        
     </>
   )
