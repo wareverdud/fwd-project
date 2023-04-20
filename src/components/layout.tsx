@@ -8,10 +8,9 @@ interface DashboardLayoutProps {
 }
 
 export default function Layout(props: DashboardLayoutProps) {
+  // <> from location of _app.tsx, where homepage componenents where placed
 
-   // <> from location of _app.tsx, where homepage componenents where placed
-
-   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Home
   )
 
@@ -33,11 +32,9 @@ export default function Layout(props: DashboardLayoutProps) {
 
   // </> from location of _app.tsx, where homepage componenents where placed
 
-
-
   return (
     <>
-    <Navbar
+      <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
