@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { SelectedPage } from '@/shared/types'
 import { motion } from 'framer-motion'
 import HText from '@/shared/HText'
-import Login from "@/components/signIn";
-import SignUp from "@/components/signUp";
+import Login from '@/components/signIn'
+import SignUp from '@/components/signUp'
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void

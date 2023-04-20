@@ -45,7 +45,6 @@ export default function Home() {
 
   // </> from location of _app.tsx, where homepage componenents where placed
 
-
   return (
     <>
       <Head>

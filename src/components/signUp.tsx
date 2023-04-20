@@ -1,6 +1,7 @@
-import { signUp } from '@/firebase/firebase-setup'
+import { auth, db, signUp } from '@/firebase/firebase-setup'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { doc, setDoc } from 'firebase/firestore'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -16,6 +17,14 @@ const SignUp = () => {
     if (typeof res !== 'boolean' && res?.error) {
       setError(res.error)
     } else {
+      const uid = auth.currentUser?.uid
+      if (uid) {
+        for (const lang of ['french', 'german', 'russian', 'spanish']) {
+          await setDoc(doc(db, `languages/${lang}/flashcards`, uid), {
+            card: [],
+          })
+        }
+      }
       await router.push('/languages')
     }
   }

@@ -5,11 +5,9 @@ import { useState } from 'react'
 import { SelectedPage } from '@/shared/types'
 
 export default function Languages(props: { user: { uid: any } }) {
-
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Languages
   )
-
 
   const router = useRouter()
   function handle(lang: string) {
@@ -21,14 +19,15 @@ export default function Languages(props: { user: { uid: any } }) {
 
   return (
     <section
-    id="languages"
-    className="mx-auto min-h-full w-5/6 py-20" // min-h-full it can expend and fit the content
+      id="languages"
+      className="mx-auto min-h-full w-5/6 py-20" // min-h-full it can expend and fit the content
     >
       <Head>
         <title>Languages</title>
       </Head>
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Languages)}>
-      
+      <motion.div
+        onViewportEnter={() => setSelectedPage(SelectedPage.Languages)}
+      >
         <h1 className="text-3xl font-bold">Languages</h1>
         <div className="m-3">
           <button onClick={() => handle('french')} className={buttonStyles}>
