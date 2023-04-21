@@ -1,9 +1,11 @@
-import Link from '@/components/navbar/link'
-import { useState } from 'react'
+import ALink from '@/components/navbar/ALink'
+import Link from 'next/link'
+import React, { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import Logo from '@/assets/Logo.png'
 import { SelectedPage } from '@/shared/types'
 import ActionButton from '@/shared/ActionButton'
+import Profile from '@/components/signOut'
 
 type Props = {
   isTopOfPage: boolean
@@ -30,40 +32,33 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               <div className={`${flexBetween} gap-8 text-sm`}>
                 <ul className="flex flex-row gap-8">
                   <li>
-                    <Link
-                      page="Home"
-                      selectedPage={selectedPage}
-                      setSelectedPage={setSelectedPage}
-                    />
+                    <Link href={'/'}>Home</Link>
                   </li>
+                  {/*<li>*/}
+                  {/*  <ALink*/}
+                  {/*    page="Benefits"*/}
+                  {/*    selectedPage={selectedPage}*/}
+                  {/*    setSelectedPage={setSelectedPage}*/}
+                  {/*  />*/}
+                  {/*</li>*/}
                   <li>
-                    <Link
-                      page="Benefits"
-                      selectedPage={selectedPage}
-                      setSelectedPage={setSelectedPage}
-                    />
+                    <Link href={'/languages'}>Languages</Link>
                   </li>
-                  <li>
-                    <Link
-                      page="Languages"
-                      selectedPage={selectedPage}
-                      setSelectedPage={setSelectedPage}
-                    />
-                  </li>
-                  <li>
-                    <Link
-                      page="Gallery"
-                      selectedPage={selectedPage}
-                      setSelectedPage={setSelectedPage}
-                    />
-                  </li>
+                  {/*<li>*/}
+                  {/*  <ALink*/}
+                  {/*    page="Gallery"*/}
+                  {/*    selectedPage={selectedPage}*/}
+                  {/*    setSelectedPage={setSelectedPage}*/}
+                  {/*  />*/}
+                  {/*</li>*/}
                 </ul>
               </div>
 
               <div className={`${flexBetween} gap-8`}>
-                <ActionButton setSelectedPage={setSelectedPage}>
-                  Sign In
-                </ActionButton>
+                {/*<ActionButton setSelectedPage={setSelectedPage}>*/}
+                {/*  Sign In*/}
+                {/*</ActionButton>*/}
+                <Profile />
               </div>
             </div>
           </div>

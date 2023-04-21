@@ -10,8 +10,12 @@ const Profile = () => {
 
   return (
     <>
-      <h2>Profile</h2>
-      <button onClick={handleLogout}>Logout</button>
+      <button
+        className="mx-2 rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+        onClick={handleLogout}
+      >
+        Logout
+      </button>
     </>
   )
 }

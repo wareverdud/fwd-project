@@ -1,106 +1,63 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import {
-  doc,
-  getDoc,
-  updateDoc,
-  arrayUnion,
-  arrayRemove,
-} from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 import { auth, db } from '@/firebase/firebase-setup'
 import { motion } from 'framer-motion'
 import { SelectedPage } from '@/shared/types'
-
-interface Card {
-  english: string
-  target: string
-}
+import { Data } from '@/shared/types'
 
 export default function Cards() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.SpecificLanguages
   )
-
   const router = useRouter()
-  const [flashcards, setFlashcards] = useState<Array<Card>>([])
+  const [cards, setCards] = useState<Array<Data>>([])
 
-  // render everytime for some reason
   useEffect(() => {
     async function getCards() {
-      const uid = auth.currentUser?.uid
-      if (uid) {
-        const docRef = doc(db, `languages/${router.query.lang}/flashcards`, uid)
-        const docSnap = await getDoc(docRef)
-        if (docSnap.exists()) {
-          setFlashcards(docSnap.data().card)
-        }
-      }
+      const querySnapshot = await getDocs(
+        collection(db, `languages/${router.query.lang}/flashcards`)
+      )
+      const res: Data[] = []
+      querySnapshot.forEach((doc) => {
+        res.push({ id: doc.id, data: doc.data().card })
+      })
+      setCards(res)
     }
     getCards().then((r) => r)
-  }, [flashcards, router.query.lang])
-
-  async function addCard() {
-    const uid = auth.currentUser?.uid
-    if (uid) {
-      for (const o of [{ english: 'hello', target: 'bonjour' }]) {
-        await updateDoc(
-          doc(db, `languages/${router.query.lang}/flashcards`, uid),
-          { card: arrayUnion(o) }
-        )
-      }
-    }
-  }
-
-  async function deleteCard() {
-    const uid = auth.currentUser?.uid
-    if (uid) {
-      for (const o of [{ english: 'hello', target: 'bonjour' }]) {
-        await updateDoc(
-          doc(db, `languages/${router.query.lang}/flashcards`, uid),
-          { card: arrayRemove(o) }
-        )
-      }
-    }
-  }
+  }, [router.query.lang])
 
   return (
     <>
       <Head>
-        <title>{router.query.id}</title>
+        <title>
+          {router.query.lang &&
+            (router.query.lang as string).charAt(0).toUpperCase() +
+              (router.query.lang as string).slice(1)}
+        </title>
       </Head>
-      <section
-        id="slanguages"
-        className="mx-auto min-h-full w-5/6 py-20" // min-h-full it can expend and fit the content
-      >
+      <section id="slanguages" className="mx-auto min-h-full w-5/6 py-20">
         <motion.div
           onViewportEnter={() =>
             setSelectedPage(SelectedPage.SpecificLanguages)
           }
         >
           <h1 className="text-3xl font-bold">Cards</h1>
-          <button
-            className="mx-2 rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
-            onClick={addCard}
-          >
-            Add Card
-          </button>
-          <button
-            className="mx-2 rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
-            onClick={deleteCard}
-          >
-            Delete Card
-          </button>
-          {(flashcards === undefined || flashcards.length === 0) && (
-            <p>No cards</p>
-          )}
-          {flashcards !== undefined &&
-            flashcards.length !== 0 &&
-            flashcards.map((o, idx) => (
-              <p key={idx}>
-                {o.english}: {o.target}
-              </p>
-            ))}
+          {cards.map((x) => {
+            return (
+              <div className="my-2" key={x.id}>
+                <button
+                  className="mx-2 rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+                  onClick={() =>
+                    router.push(`/languages/${router.query.lang}/${x.id}`)
+                  }
+                >
+                  {x.id}
+                </button>
+              </div>
+            )
+          })}
         </motion.div>
       </section>
     </>
