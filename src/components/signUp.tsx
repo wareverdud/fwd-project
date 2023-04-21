@@ -15,7 +15,7 @@ const SignUp = () => {
     setPassword('')
     const res = await signUp(email, password)
     if (typeof res !== 'boolean' && res?.error) {
-      setError(res.error)
+      setError(res.error.toString().slice(10))
     } else {
       const uid = auth.currentUser?.uid
       if (uid) {

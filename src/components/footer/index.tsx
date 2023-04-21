@@ -39,7 +39,7 @@ const Footer = ({ setSelectedPage }: Props) => {
             <img className="h-15 m-4 w-11" src={telegram.src} alt="Telegram" />
           </a>
           <p>
-            <a href="https://github.com/wareverdud/fwd-project">
+            <a href="https://github.com/wareverdud/">
               <img className="h-15 m-4 w-11" src={github.src} alt="GitHub" />
             </a>
           </p>

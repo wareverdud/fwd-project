@@ -14,7 +14,7 @@ const Login = () => {
     setPassword('')
     const res = await signIn(email, password)
     if (typeof res !== 'boolean' && res?.error) {
-      setError(res.error)
+      setError(res.error.toString().slice(10))
     } else {
       await router.replace('/languages')
     }

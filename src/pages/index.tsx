@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import React, { Component, useEffect, useState } from 'react'
-import Login from '@/components/signIn'
-import SignUp from '@/components/signUp'
+// import Login from '@/components/signIn'
+// import SignUp from '@/components/signUp'
+import Profile from '@/components/signOut'
 import Hero from '@/components/hero'
 import Benefits from '@/components/benefits'
 import Gallery from '@/components/gallery'
@@ -58,30 +59,7 @@ export default function Home() {
       <Gallery setSelectedPage={setSelectedPage} />
       <SignIn setSelectedPage={setSelectedPage} />
 
-      <h1 className="text-3xl font-bold">Home page</h1>
-
-      {/*Home page logic should be here?*/}
-      {/*{signIn ? (*/}
-      {/*  <div>*/}
-      {/*    <Login />*/}
-      {/*  </div>*/}
-      {/*) : (*/}
-      {/*  <div>*/}
-      {/*    <SignUp />*/}
-      {/*  </div>*/}
-      {/*)}*/}
-      {/*<input*/}
-      {/*  onClick={(e) => handle(e)}*/}
-      {/*  type="button"*/}
-      {/*  value="Sign in"*/}
-      {/*  className="mx-5 hover:underline"*/}
-      {/*/>*/}
-      {/*<input*/}
-      {/*  onClick={(e) => handle(e)}*/}
-      {/*  type="button"*/}
-      {/*  value="Sign up"*/}
-      {/*  className="mx-5 hover:underline"*/}
-      {/*/>*/}
+      {/*<h1 className="text-3xl font-bold">Home page</h1>*/}
     </>
   )
 }
