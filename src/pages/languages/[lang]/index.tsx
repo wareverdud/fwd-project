@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
-import { auth, db } from '@/firebase/firebase-setup'
+import { db } from '@/firebase/firebase-setup'
 import { motion } from 'framer-motion'
 import { SelectedPage } from '@/shared/types'
 import { Data } from '@/shared/types'
+const Show = lazy(() => import('@/components/show'))
 
 export default function Cards() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -53,7 +54,9 @@ export default function Cards() {
                     router.push(`/languages/${router.query.lang}/${x.id}`)
                   }
                 >
-                  {x.id}
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Show uid={x.id} />
+                  </Suspense>
                 </button>
               </div>
             )

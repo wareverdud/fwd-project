@@ -6,6 +6,7 @@ import Logo from '@/assets/Logo.png'
 import { SelectedPage } from '@/shared/types'
 import ActionButton from '@/shared/ActionButton'
 import Profile from '@/components/signOut'
+import { auth } from '@/firebase/firebase-setup'
 
 type Props = {
   isTopOfPage: boolean
@@ -58,7 +59,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 {/*<ActionButton setSelectedPage={setSelectedPage}>*/}
                 {/*  Sign In*/}
                 {/*</ActionButton>*/}
-                <Profile />
+                {auth.currentUser && <Profile />}
               </div>
             </div>
           </div>
@@ -69,9 +70,3 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 }
 
 export default Navbar
-
-{
-  /* <nav className='flex left-16 h-16 w-screen'>
-
-</nav> */
-}
