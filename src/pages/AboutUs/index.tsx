@@ -5,7 +5,7 @@ import { useState } from 'react'
 import image1 from '@/assets/Ruslan.png'
 import image2 from '@/assets/Diana.png'
 import image3 from '@/assets/Nikita.png'
-import image4 from '@/assets/sergey.png'
+import image4 from '@/assets/Sergey.png'
 import { SelectedPage, PhotosType } from '@/shared/types'
 type Props = {
   name: string
