@@ -7,6 +7,7 @@ import image2 from '@/assets/Diana.png'
 import image3 from '@/assets/Nikita.png'
 import image4 from '@/assets/Sergey.png'
 import { SelectedPage, PhotosType } from '@/shared/types'
+
 type Props = {
   name: string
   description?: string
@@ -15,13 +16,8 @@ type Props = {
 
 export default function AboutUs(props: { user: { uid: any } }) {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Languages
+    SelectedPage.AboutUs
   )
-
-  const router = useRouter()
-  function handle(lang: string) {
-    router.push(`/AboutUs/`).then((r) => r)
-  }
 
   const photos: Array<PhotosType> = [
     {
