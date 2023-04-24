@@ -41,7 +41,7 @@ export default function AboutUs(props: { user: { uid: any } }) {
     {
       name: 'Sergey Pasynkov',
       description:
-        'QA engineer. Sergey checks the work of the site and looks for all kinds of errors and vulnerabilities in it.GG',
+        'Our frontend developer and UI/UX designer. Sergey was in charge of designing the website and diligently worked on enhancing its structure for optimal functionality. He also conducted rigorous testing to ensure that everything was working seamlessly, thus playing a crucial role in the success of the website.',
       image: imageSergey.src,
     },
   ]
