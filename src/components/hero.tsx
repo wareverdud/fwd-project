@@ -3,6 +3,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import ActionButton from '@/shared/ActionButton'
 import HomePageText from '@/assets/HomePageText.png'
 import HomePageGraphic from '@/assets/HomePageGraphic.png'
+import Evolve from '@/assets/Evolve.png'
 import { motion } from 'framer-motion'
 
 type Props = {
@@ -32,11 +33,15 @@ const Hero = ({ setSelectedPage }: Props) => {
             }}
           >
             <div className="relative">
-              <div className="before:absolute before:-left-20 before:-top-20 before:z-[-1] md:before:content-evolvetext">
-                <img alt="home-page-text" src={HomePageText.src} />
+              <div className="before:absolute before:-left-20 before:top-5 before:z-[-1]">
+                <img alt="evolve-text" src={Evolve.src} />
+                <img
+                  alt="home-page-text"
+                  src={HomePageText.src}
+                  className="mt-[-5vw]"
+                />
               </div>
             </div>
-
             <p className="mt-5 text-xl md:text-start">
               Because ordering pizza in Italian is a life skill too.
             </p>

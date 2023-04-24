@@ -1,6 +1,5 @@
 import HText from '@/shared/HText'
 import { BenefitType, SelectedPage } from '@/shared/types'
-
 import {
   HomeModernIcon,
   UserGroupIcon,
