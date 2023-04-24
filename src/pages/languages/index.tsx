@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { SelectedPage } from '@/shared/types'
-import pattern1 from '@/assets/Pattern4.png'
-import pattern2 from '@/assets/Arrow.png'
-import pattern3 from '@/assets/AbstractWaves.png'
+import imageCube from '@/assets/Cube.png'
+import imageArrow from '@/assets/Arrow.png'
+import imageAbstractWaves from '@/assets/AbstractWaves.png'
 
 export default function Languages(props: { user: { uid: any } }) {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -73,21 +73,21 @@ export default function Languages(props: { user: { uid: any } }) {
         <div className="ml-[45vw] mt-[-12vw] flex">
           <img
             className="mx-auto w-[10vw]"
-            src={pattern2.src}
+            src={imageArrow.src}
             alt="Pattern_arrow"
           />
         </div>
         <div className="ml-[-45vw] mt-[-3vw]">
           <img
             className="mx-auto flex w-[12vw] py-10"
-            src={pattern1.src}
+            src={imageCube.src}
             alt="Pattern_cube"
           />
         </div>
         <div className="ml-[55vw] mt-[-13vw]">
           <img
             className="mx-auto flex w-[12vw] py-10"
-            src={pattern3.src}
+            src={imageAbstractWaves.src}
             alt="Pattern_abstractWaves"
           />
         </div>
