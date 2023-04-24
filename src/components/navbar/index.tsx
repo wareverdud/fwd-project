@@ -18,7 +18,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexBetween = 'flex items-center justify-between'
   const navbarBackground = isTopOfPage ? '' : 'bg-primary-100 drop-shadow'
   return (
-    <nav className="left-16 flex h-16 w-screen">
+    <nav className="left-16 flex h-16">
       <div
         className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
       >
@@ -31,7 +31,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             <div className={`${flexBetween} w-full`}>
               {/*Links*/}
               <div className={`${flexBetween} gap-8 text-sm`}>
-                <ul className="flex flex-row gap-8">
+                <ul className="flex flex-row gap-8 text-lg font-medium">
                   <li>
                     <Link href={'/'}>Home</Link>
                   </li>
@@ -44,6 +44,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                   {/*</li>*/}
                   <li>
                     <Link href={'/languages'}>Languages</Link>
+                  </li>
+                  <li>
+                    <Link href={'/AboutUs'}>About us</Link>
                   </li>
                   {/*<li>*/}
                   {/*  <ALink*/}

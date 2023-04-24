@@ -13,7 +13,7 @@ const Footer = ({ setSelectedPage }: Props) => {
   return (
     <motion.footer
       onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}
-      className="bg-primary-100 py-16"
+      className="bg-primary-100 py-5"
     >
       <div className="justify-content mx-auto w-5/6 gap-16 md:flex">
         <div className="mt-16 basis-1/2 md:mt-11">
@@ -30,7 +30,7 @@ const Footer = ({ setSelectedPage }: Props) => {
           <h4 className="font-bold">Our creators</h4>
           <p className="my-5">Diana Melnikova</p>
           <p className="my-5">Ruslan Khakimov</p>
-          <p className="my-5">Nikita Nikhay</p>
+          <p className="my-5">Nikita Niakhai</p>
           <p className="my-5">Sergey Pasynkov</p>
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
