@@ -1,10 +1,10 @@
 import { SelectedPage, PhotosType } from '@/shared/types'
 import Photo from './Photo'
-import image1 from '@/assets/image1.png'
-import image2 from '@/assets/image2.png'
-import image3 from '@/assets/image3.png'
-import image4 from '@/assets/image4.png'
-import image5 from '@/assets/image5.png'
+import carouselImage1 from '@/assets/carouselImage1.png'
+import carouselImage2 from '@/assets/carouselImage2.png'
+import carouselImage3 from '@/assets/carouselImage3.png'
+import carouselImage4 from '@/assets/carouselImage4.png'
+import carouselImage5 from '@/assets/carouselImage5.png'
 import React from 'react'
 import { motion } from 'framer-motion'
 import HText from '@/shared/HText'
@@ -14,31 +14,31 @@ const photos: Array<PhotosType> = [
     name: 'Conversation Circles',
     description:
       'Practice speaking and listening skills in a supportive environment by participating in conversation circles, where learners of all levels engage in discussions on various topics. Native speakers and experienced language learners are invited to facilitate these sessions, offering guidance and corrections when necessary.',
-    image: image1.src,
+    image: carouselImage1.src,
   },
   {
     name: 'Cultural Evenings',
     description:
       "Immerse yourself in the rich traditions and customs of different countries by attending cultural evenings. These events provide a unique opportunity to learn about the culture behind the languages you're studying.",
-    image: image2.src,
+    image: carouselImage2.src,
   },
   {
     name: 'Language Challenges',
     description:
       'Participate in regular language challenges to set personal goals, track your progress, and stay motivated. Challenges can include a set number of hours of language practice, vocabulary-building, or completing a language course.',
-    image: image3.src,
+    image: carouselImage3.src,
   },
   {
     name: 'Guest Lectures',
     description:
       'Attend insightful talks by linguists, authors, and polyglots, who share their experiences, tips, and tricks on language learning, as well as discuss various linguistic topics and cultural insights.',
-    image: image4.src,
+    image: carouselImage4.src,
   },
   {
     name: 'Language Workshops',
     description:
       'Improve your grammar, vocabulary, and pronunciation through interactive workshops led by experienced tutors. These sessions are tailored to specific proficiency levels and focus on developing core language skills.',
-    image: image5.src,
+    image: carouselImage5.src,
   },
 ]
 
