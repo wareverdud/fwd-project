@@ -2,10 +2,10 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import image1 from '@/assets/Ruslan.png'
-import image2 from '@/assets/Diana.png'
-import image3 from '@/assets/Nikita.png'
-import image4 from '@/assets/Sergey.png'
+import imageRuslan from '@/assets/Ruslan.png'
+import imageDiana from '@/assets/Diana.png'
+import imageNikita from '@/assets/Nikita.png'
+import imageSergey from '@/assets/Sergey.png'
 import { SelectedPage, PhotosType } from '@/shared/types'
 
 type Props = {
@@ -24,25 +24,25 @@ export default function AboutUs(props: { user: { uid: any } }) {
       name: 'Ruslan Khakimov',
       description:
         "Our team leader and backend developer. The user doesn't see the server part of the page, but this is what drives the site or application. Ruslan isn't only a developer and a professional in his field, but also a good manager. He helps the team and manages the development process.",
-      image: image1.src,
+      image: imageRuslan.src,
     },
     {
       name: 'Nikita Niakhai',
       description:
         'Our frontend developer. Nikita designed the layout of the design so that it would be convenient for the user, so you, to interact with the page.',
-      image: image3.src,
+      image: imageNikita.src,
     },
     {
       name: 'Diana Melnikova',
       description:
         'Our frontend developer and UI/UX designer. Diana set the design and direction for the whole project, so UI/UX experts are no less important than developers. Nevertheless, everything you see on this site is the work of our interface developers.',
-      image: image2.src,
+      image: imageDiana.src,
     },
     {
       name: 'Sergey Pasynkov',
       description:
-        'QA engineer. Sergey checks the work of the site and looks for all kinds of errors and vulnerabilities in it.',
-      image: image4.src,
+        'QA engineer. Sergey checks the work of the site and looks for all kinds of errors and vulnerabilities in it.GG',
+      image: imageSergey.src,
     },
   ]
 
@@ -80,9 +80,11 @@ export default function AboutUs(props: { user: { uid: any } }) {
             OUR CREATORS
           </h1>
           <p className="py-5 text-center text-base font-normal">
-            Our team is able to turn even the craziest idea into a functional
-            and competitive project. A good staff is often 50% of the success of
-            the entire project. Get to know us!
+            We possess the capability to transform even the most eccentric idea
+            into an operational and marketable project. It is evident that
+            having a competent and skilled team accounts for 50% of the
+            project&apos;s accomplishment. We welcome you to familiarize yourself
+            with our team!
           </p>
         </motion.div>
         <div className="mt-10 w-full overflow-x-auto overflow-y-hidden">

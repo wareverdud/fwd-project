@@ -130,15 +130,22 @@ const Benefits = ({ setSelectedPage }: Props) => {
               }}
             >
               <p className="mb-5">
-                Knowledge of one language allows you to enter the hall of life,
-                knowledge of two languages opens all the doors in this hall to
-                you.
+                Acquiring the knowledge of one language is like gaining access
+                to the entrance of the hall of life, while being proficient in
+                two languages enables you to explore and experience all the
+                opportunities that the hall has to offer. Every door within the
+                hall becomes readily available to you facilitating a broader
+                perspective and deeper understanding of different cultures and
+                people.
               </p>
               <p className="mb-5">
-                Become a part of our platform and learn new languages with ease.
-                Help others, share your experience, complete tasks of varying
-                complexity and check your progress at any time convenient for
-                you!
+                Take part in our platform and learn new languages effortlessly.
+                Not only will you benefit from gaining fluency in different
+                languages, but you will also have the opportunity to contribute
+                to the community by sharing your expertise, accomplishing tasks
+                of differing levels of difficulty, and tracking your progress at
+                any time that suits you. Join us now and make language learning
+                a joyous experience!
               </p>
             </motion.div>
             {/* BUTTON */}

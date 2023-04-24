@@ -1,8 +1,8 @@
 import { SelectedPage } from '@/shared/types'
 import Logo from '@/assets/Logo.png'
-import telegram from '@/assets/telegram.png'
-import github from '@/assets/GitHub.png'
-import instagram from '@/assets/Instagram.png'
+import imageTelegram from '@/assets/telegram.png'
+import imageGithub from '@/assets/GitHub.png'
+import imageInstagram from '@/assets/Instagram.png'
 import { motion } from 'framer-motion'
 
 type Props = {
@@ -20,11 +20,11 @@ const Footer = ({ setSelectedPage }: Props) => {
           <img src={Logo.src} alt="logo" />
         </div>
         <p className="my-5">
-          It happens that while learning a language, hands drop and it seems
-          that this process is endless. There comes laziness, self-doubt and a
-          feeling that nothing will work out. At these moments, HummiLang comes
-          to the rescue, which will remind you that this step is interim, and
-          you are on the right path.
+          When learning a language, it is common to feel like progress has
+          slowed down and that the process may never end. Laziness, self-doubt,
+          and a sense of hopelessness may arise. During these challenging
+          moments, HummiLang can be a great resource to remind you that this
+          step is temporary and that you are on the right track.
         </p>
         <div className="mt-16 basis-1/4 md:mt-0">
           <h4 className="font-bold">Our creators</h4>
@@ -36,18 +36,18 @@ const Footer = ({ setSelectedPage }: Props) => {
         <div className="mt-16 basis-1/4 md:mt-0">
           <h4 className="font-bold">Contact us</h4>
           <a href="https://t.me/meldilen24">
-            <img className="h-15 m-4 w-11" src={telegram.src} alt="Telegram" />
+            <img className="h-15 m-4 w-11" src={imageTelegram.src} alt="Telegram" />
           </a>
           <p>
             <a href="https://github.com/wareverdud/">
-              <img className="h-15 m-4 w-11" src={github.src} alt="GitHub" />
+              <img className="h-15 m-4 w-11" src={imageGithub.src} alt="GitHub" />
             </a>
           </p>
           <p>
             <a href="https://instagram.com/araneaesolidum?igshid=YmMyMTA2M2Y=">
               <img
                 className="h-15 m-4 w-11"
-                src={instagram.src}
+                src={imageInstagram.src}
                 alt="Instagram"
               />
             </a>
@@ -56,7 +56,7 @@ const Footer = ({ setSelectedPage }: Props) => {
             <a href="https://t.me/howtochangealias">
               <img
                 className="h-15 m-4 w-11"
-                src={telegram.src}
+                src={imageTelegram.src}
                 alt="Telegram"
               />
             </a>
