@@ -1,18 +1,13 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { SelectedPage } from '@/shared/types'
 import imageCube from '@/assets/Cube.png'
 import imageArrow from '@/assets/Arrow.png'
 import imageAbstractWaves from '@/assets/AbstractWaves.png'
 
-export default function Languages(props: { user: { uid: any } }) {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Languages
-  )
-
+export default function Languages() {
   const router = useRouter()
+
   function handle(lang: string) {
     router.push(`/languages/${lang}`).then((r) => r)
   }
@@ -25,9 +20,7 @@ export default function Languages(props: { user: { uid: any } }) {
       <Head>
         <title>Languages</title>
       </Head>
-      <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.Languages)}
-      >
+      <motion.div>
         <motion.div
           className="mx-auto w-5/6"
           initial="hidden"

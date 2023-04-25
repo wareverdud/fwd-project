@@ -1,23 +1,19 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/firebase-setup'
 import { motion } from 'framer-motion'
-import { SelectedPage } from '@/shared/types'
 import Card from '@/components/card'
 import { CardType } from '@/shared/types'
 
 export default function Container() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.SpecificLanguages
-  )
+  const router = useRouter()
+  const ref = useRef(true)
   const [words, setWords] = useState<Array<CardType>>([])
   const [cardNum, setCardNum] = useState(0)
-  const router = useRouter()
   const [front, setFront] = useState(true)
 
-  // render everytime for some reason
   useEffect(() => {
     async function getCards() {
       const uid = router.query.id as string
@@ -28,9 +24,11 @@ export default function Container() {
           setWords(docSnap.data().card)
         }
       }
-      // console.log('u')
     }
-    getCards().then((r) => r)
+    if (ref.current) {
+      ref.current = false
+      getCards().then((r) => r)
+    }
   }, [words, router.query.id, router.query.lang])
 
   function talk(text: string | undefined) {
@@ -52,11 +50,7 @@ export default function Container() {
         <title>{router.query.id}</title>
       </Head>
       <section id="slanguages" className="mx-auto min-h-full w-5/6 py-20">
-        <motion.div
-          onViewportEnter={() =>
-            setSelectedPage(SelectedPage.SpecificLanguages)
-          }
-        >
+        <motion.div>
           <h1 className="text-3xl font-bold">Cards</h1>
           <div className="m-2 p-2" onClick={() => setFront(!front)}>
             <Card

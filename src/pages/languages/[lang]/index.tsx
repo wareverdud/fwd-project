@@ -4,14 +4,10 @@ import { lazy, Suspense, useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '@/firebase/firebase-setup'
 import { motion } from 'framer-motion'
-import { SelectedPage } from '@/shared/types'
 import { Data } from '@/shared/types'
 const Show = lazy(() => import('@/components/show'))
 
 export default function Cards() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.SpecificLanguages
-  )
   const router = useRouter()
   const [cards, setCards] = useState<Array<Data>>([])
 
@@ -39,11 +35,7 @@ export default function Cards() {
         </title>
       </Head>
       <section id="slanguages" className="mx-auto min-h-full w-5/6 py-20">
-        <motion.div
-          onViewportEnter={() =>
-            setSelectedPage(SelectedPage.SpecificLanguages)
-          }
-        >
+        <motion.div>
           <h1 className="text-3xl font-bold">Cards</h1>
           {cards.map((x) => {
             return (

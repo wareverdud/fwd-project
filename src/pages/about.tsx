@@ -1,12 +1,10 @@
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import imageRuslan from '@/assets/Ruslan.png'
 import imageDiana from '@/assets/Diana.png'
 import imageNikita from '@/assets/Nikita.png'
 import imageSergey from '@/assets/Sergey.png'
-import { SelectedPage, PhotosType } from '@/shared/types'
+import { PhotosType } from '@/shared/types'
 
 type Props = {
   name: string
@@ -14,11 +12,7 @@ type Props = {
   image: string
 }
 
-export default function AboutUs(props: { user: { uid: any } }) {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.AboutUs
-  )
-
+export default function AboutUs() {
   const photos: Array<PhotosType> = [
     {
       name: 'Ruslan Khakimov',
@@ -49,7 +43,7 @@ export default function AboutUs(props: { user: { uid: any } }) {
   const Photo = ({ name, image, description }: Props) => {
     return (
       <li className="relative mx-8 w-[20%]">
-        <img alt={`${image}`} src={image} className="rounded-full" />
+        <img src={image} alt={`${image}`} className="rounded-full" />
         <p className="mt-2 text-center text-2xl">{name}</p>
         <p className="mt-1 text-center">{description}</p>
       </li>
@@ -64,7 +58,7 @@ export default function AboutUs(props: { user: { uid: any } }) {
       <Head>
         <title>About us</title>
       </Head>
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.AboutUs)}>
+      <motion.div>
         <motion.div
           className="mx-auto w-5/6"
           initial="hidden"
@@ -83,8 +77,8 @@ export default function AboutUs(props: { user: { uid: any } }) {
             We possess the capability to transform even the most eccentric idea
             into an operational and marketable project. It is evident that
             having a competent and skilled team accounts for 50% of the
-            project&apos;s accomplishment. We welcome you to familiarize yourself
-            with our team!
+            project&apos;s accomplishment. We welcome you to familiarize
+            yourself with our team!
           </p>
         </motion.div>
         <div className="mt-10 w-full overflow-x-auto overflow-y-hidden">

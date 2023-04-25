@@ -11,7 +11,3 @@ export default function Document() {
     </Html>
   )
 }
-
-{
-  /* <body className='flex font-medium text-center dark:bg-gray-800 dark:text-white mx-auto '></body> */
-}

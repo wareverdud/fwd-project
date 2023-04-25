@@ -2,15 +2,11 @@ import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import { auth, db } from '@/firebase/firebase-setup'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
-import { SelectedPage } from '@/shared/types'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 
 export default function Modify() {
   const inputStyles = `w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white text-white`
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.SpecificLanguages
-  )
   const router = useRouter()
   const uid = router.query.id as string
   const lang = router.query.lang as string
@@ -56,11 +52,7 @@ export default function Modify() {
         <title>Modify</title>
       </Head>
       <section id="slanguages" className="mx-auto min-h-full w-5/6 py-20">
-        <motion.div
-          onViewportEnter={() =>
-            setSelectedPage(SelectedPage.SpecificLanguages)
-          }
-        >
+        <motion.div>
           <div>
             <div className="m-3">
               <input

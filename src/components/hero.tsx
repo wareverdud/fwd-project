@@ -1,5 +1,4 @@
 import { SelectedPage } from '@/shared/types'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import ActionButton from '@/shared/ActionButton'
 import HomePageText from '@/assets/HomePageText.png'
 import HomePageGraphic from '@/assets/HomePageGraphic.png'

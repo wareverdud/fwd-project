@@ -36,11 +36,19 @@ const Footer = ({ setSelectedPage }: Props) => {
         <div className="mt-16 basis-1/4 md:mt-0">
           <h4 className="font-bold">Contact us</h4>
           <a href="https://t.me/meldilen24">
-            <img className="h-15 m-4 w-11" src={imageTelegram.src} alt="Telegram" />
+            <img
+              className="h-15 m-4 w-11"
+              src={imageTelegram.src}
+              alt="Telegram"
+            />
           </a>
           <p>
             <a href="https://github.com/wareverdud/">
-              <img className="h-15 m-4 w-11" src={imageGithub.src} alt="GitHub" />
+              <img
+                className="h-15 m-4 w-11"
+                src={imageGithub.src}
+                alt="GitHub"
+              />
             </a>
           </p>
           <p>

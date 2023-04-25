@@ -14,12 +14,7 @@ export const db = getFirestore()
 
 export const signUp = async (email: string, password: string) => {
   try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    )
-    const user = userCredential.user
+    await createUserWithEmailAndPassword(auth, email, password)
     return true
   } catch (error: any) {
     return { error: error.message }
@@ -28,12 +23,7 @@ export const signUp = async (email: string, password: string) => {
 
 export const signIn = async (email: string, password: string) => {
   try {
-    const userCredential = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    )
-    const user = userCredential.user
+    await signInWithEmailAndPassword(auth, email, password)
     return true
   } catch (error: any) {
     return { error: error.message }

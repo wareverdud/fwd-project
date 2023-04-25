@@ -1,8 +1,5 @@
 import Head from 'next/head'
-import React, { Component, useEffect, useState } from 'react'
-// import Login from '@/components/signIn'
-// import SignUp from '@/components/signUp'
-import Profile from '@/components/signOut'
+import React, { useEffect, useState } from 'react'
 import Hero from '@/components/hero'
 import Benefits from '@/components/benefits'
 import Gallery from '@/components/gallery'
@@ -10,24 +7,9 @@ import SignIn from '@/components/authorization'
 import { SelectedPage } from '@/shared/types'
 
 export default function Home() {
-  const [signIn, setSignIn] = useState(true)
-
-  //TODO
-  // event: React.MouseEvent<HTMLInputElement, MouseEvent> shows error during build
-  function handle(event: any) {
-    if (event.target.value === 'Sign in') {
-      setSignIn(true)
-    } else {
-      setSignIn(false)
-    }
-  }
-
-  // <> from location of _app.tsx, where homepage componenents where placed
-
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Home
   )
-
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
 
   useEffect(() => {
@@ -58,8 +40,6 @@ export default function Home() {
       <Benefits setSelectedPage={setSelectedPage} />
       <Gallery setSelectedPage={setSelectedPage} />
       <SignIn setSelectedPage={setSelectedPage} />
-
-      {/*<h1 className="text-3xl font-bold">Home page</h1>*/}
     </>
   )
 }

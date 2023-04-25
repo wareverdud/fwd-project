@@ -34,11 +34,7 @@ export default function Layout(props: DashboardLayoutProps) {
 
   return (
     <>
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
+      <Navbar isTopOfPage={isTopOfPage} />
 
       <main>{props.children}</main>
 
