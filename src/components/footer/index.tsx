@@ -26,18 +26,18 @@ const Footer = ({ setSelectedPage }: Props) => {
           moments, HummiLang can be a great resource to remind you that this
           step is temporary and that you are on the right track.
         </p>
-        <div className="mt-16 basis-1/4 md:mt-0">
+        <div className="mt-16 basis-1/4 md:mt-4">
           <h4 className="font-bold">Our creators</h4>
           <p className="my-5">Diana Melnikova</p>
           <p className="my-5">Ruslan Khakimov</p>
           <p className="my-5">Nikita Niakhai</p>
           <p className="my-5">Sergey Pasynkov</p>
         </div>
-        <div className="mt-16 basis-1/4 md:mt-0">
+        <div className="mt-16 basis-1/4 md:mt-10">
           <h4 className="font-bold">Contact us</h4>
           <a href="https://t.me/meldilen24">
             <img
-              className="h-15 m-4 w-11"
+              className="h-15 m-5 w-11"
               src={imageTelegram.src}
               alt="Telegram"
             />
