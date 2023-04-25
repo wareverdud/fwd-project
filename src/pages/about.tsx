@@ -62,6 +62,11 @@ export default function AboutUs() {
           name="description"
           content="We welcome you to familiarize yourself with creators of HummiLang"
         />
+        <meta property="og:title" content="About us" />
+        <meta
+          property="og:description"
+          content="We welcome you to familiarize yourself with creators of HummiLang"
+        />
       </Head>
       <motion.div>
         <motion.div

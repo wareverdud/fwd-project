@@ -24,6 +24,11 @@ export default function Languages() {
           name="description"
           content="Choose the language you would like to learn with HummiLang!"
         />
+        <meta property="og:title" content="Languages" />
+        <meta
+          property="og:description"
+          content="Choose the language you would like to learn with HummiLang!"
+        />
       </Head>
       <motion.div>
         <motion.div

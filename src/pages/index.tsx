@@ -38,6 +38,11 @@ export default function Home() {
           name="description"
           content="Our platform's diverse activities aim to create a supportive and engaging environment for users to learn and practice foreign languages."
         />
+        <meta property="og:title" content="Welcome HummiLang" />
+        <meta
+          property="og:description"
+          content="Our platform's diverse activities aim to create a supportive and engaging environment for users to learn and practice foreign languages."
+        />
       </Head>
 
       {/* Home(ГЛАВНАЯ) page*/}
