@@ -33,6 +33,11 @@ export default function Home() {
       <Head>
         {/* Opengraph for telegram preview picture... */}
         <title>Welcome HummiLang</title>
+        <meta
+          key="description"
+          name="description"
+          content="Our platform's diverse activities aim to create a supportive and engaging environment for users to learn and practice foreign languages."
+        />
       </Head>
 
       {/* Home(ГЛАВНАЯ) page*/}

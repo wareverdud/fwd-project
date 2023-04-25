@@ -57,6 +57,11 @@ export default function AboutUs() {
     >
       <Head>
         <title>About us</title>
+        <meta
+          key="description"
+          name="description"
+          content="We welcome you to familiarize yourself with creators of HummiLang"
+        />
       </Head>
       <motion.div>
         <motion.div

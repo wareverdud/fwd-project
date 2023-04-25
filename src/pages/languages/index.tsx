@@ -19,6 +19,11 @@ export default function Languages() {
     >
       <Head>
         <title>Languages</title>
+        <meta
+          key="description"
+          name="description"
+          content="Choose the language you would like to learn with HummiLang!"
+        />
       </Head>
       <motion.div>
         <motion.div
