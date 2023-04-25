@@ -78,7 +78,11 @@ export default function Container() {
               Now you can study the cards of user {snap?.data()?.username}:
             </p>
           </motion.div>
-          <div className="m-2 p-2" onClick={() => setFront(!front)}>
+          <div
+            className="m-2 h-[5vw] w-[20vw] rounded-lg bg-secondary-500 px-10 py-3 text-center align-middle text-lg text-white hover:bg-red-400"
+            onClick={() => setFront(!front)}
+            style={{ marginLeft: '32vw' }}
+          >
             <Card
               isEmpty={words.length === 0}
               card={words[cardNum]}
@@ -89,7 +93,8 @@ export default function Container() {
           {words.length !== 0 && (
             <>
               <button
-                className="m-2 rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+                className={buttomStyles}
+                style={{ marginLeft: '20vw' }}
                 onClick={() => {
                   if (cardNum + 1 < words.length) {
                     setCardNum(cardNum + 1)
@@ -103,7 +108,7 @@ export default function Container() {
                 Next
               </button>
               <button
-                className="mx-2 rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+                className={buttomStyles}
                 onClick={() => {
                   if (cardNum - 1 >= 0) {
                     setCardNum(cardNum - 1)
@@ -117,7 +122,7 @@ export default function Container() {
                 Prev
               </button>
               <button
-                className="m-2 rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+                className={buttomStyles}
                 onClick={() =>
                   talk(front ? words[cardNum].english : words[cardNum].target)
                 }
