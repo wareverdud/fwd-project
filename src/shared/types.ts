@@ -1,6 +1,5 @@
 export enum SelectedPage {
   Home = 'home',
-  AboutUs = 'aboutUs',
   Contact = 'contact',
   Gallery = 'gallery',
   SignIn = 'sign',
@@ -25,6 +24,7 @@ export interface CardType {
 }
 
 export interface CardProps {
+  isEmpty: boolean
   card: CardType | undefined
   front: boolean
   language: string
