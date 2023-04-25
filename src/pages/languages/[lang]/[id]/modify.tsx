@@ -13,6 +13,10 @@ export default function Modify() {
   const ref = useRef(true)
   const [english, setEnglish] = useState('')
   const [target, setTarget] = useState('')
+  const language =
+    router.query.lang &&
+    (router.query.lang as string).charAt(0).toUpperCase() +
+      (router.query.lang as string).slice(1)
 
   useEffect(() => {
     if (ref.current) {
@@ -25,6 +29,14 @@ export default function Modify() {
   }, [lang, router, uid])
 
   async function addCard() {
+    if (english === '') {
+      alert('Empty english field')
+      return
+    }
+    if (target === '') {
+      alert(`Empty ${language} field`)
+      return
+    }
     if (uid) {
       for (const o of [{ english: english, target: target }]) {
         await updateDoc(doc(db, `languages/${lang}/flashcards`, uid), {
@@ -36,6 +48,14 @@ export default function Modify() {
   }
 
   async function deleteCard() {
+    if (english === '') {
+      alert('Empty english field')
+      return
+    }
+    if (target === '') {
+      alert(`Empty ${language} field`)
+      return
+    }
     if (uid) {
       for (const o of [{ english: english, target: target }]) {
         await updateDoc(doc(db, `languages/${lang}/flashcards`, uid), {

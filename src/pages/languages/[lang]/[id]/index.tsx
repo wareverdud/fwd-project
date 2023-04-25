@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/firebase-setup'
 import { motion } from 'framer-motion'
@@ -9,7 +9,6 @@ import { CardType } from '@/shared/types'
 
 export default function Container() {
   const router = useRouter()
-  const ref = useRef(true)
   const [words, setWords] = useState<Array<CardType>>([])
   const [cardNum, setCardNum] = useState(0)
   const [front, setFront] = useState(true)
@@ -25,11 +24,10 @@ export default function Container() {
         }
       }
     }
-    if (ref.current) {
-      ref.current = false
+    if (words.length === 0) {
       getCards().then((r) => r)
     }
-  }, [words, router.query.id, router.query.lang])
+  }, [router.query.id, router.query.lang, words])
 
   function talk(text: string | undefined) {
     if (text) {
