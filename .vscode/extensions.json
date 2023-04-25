@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "vscode-icons-team.vscode-icons",
+    "bradlc.vscode-tailwindcss",
+    "xabikos.javascriptsnippets",
+    "wayou.vscode-todo-highlight",
+    "wix.vscode-import-cost"
+  ]
+}
